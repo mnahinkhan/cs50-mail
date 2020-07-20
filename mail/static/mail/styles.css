@@ -1,3 +1,78 @@
 textarea {
-    min-height: 400px;
+  min-height: 400px;
 }
+
+body {
+  background: #0b0c10;
+  padding-top: 3vh;
+}
+
+.form-group input, .form-group input[disabled], .form-group input:focus {
+  background-color: #1f2833;
+  color: #c5c6c7;
+}
+
+#compose-form textarea {
+  background-color: #1f2833;
+  color: #c5c6c7;
+}
+
+h1, h2, h3, h4, h5, h6, p, label {
+  color: #66fcf1;
+}
+
+.form-group {
+  color: #c5c6c7;
+}
+
+#email-submit-button {
+  background-color: #45a29e;
+}
+
+.btn-outline-primary {
+  border-color: #45a29e;
+  color: #66fcf1;
+}
+
+.btn-outline-primary:hover {
+  background-color: #45a29e;
+  border-color: #45a29e;
+}
+
+#to-text-error-message {
+  color: red;
+  font-size: 12px;
+  margin-left: 30px;
+}
+
+#emails-view #titled-first-row {
+  border-top: 1px solid #45a29e;
+  background-color: #0b0c10;
+}
+#emails-view #titled-first-row p {
+  font-weight: inherit;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #66fcf1;
+}
+#emails-view div.row.email-line-box {
+  border: 1px solid #45a29e;
+  border-top: 0;
+  border-radius: 5px;
+}
+#emails-view div.row.email-line-box p {
+  color: #c5c6c7;
+  margin-top: 14px;
+  margin-bottom: 12px;
+}
+#emails-view div.row.email-line-box.read {
+  background-color: #0b0c10;
+}
+#emails-view div.row.email-line-box.unread {
+  background-color: #1f2833;
+}
+#emails-view div.row.email-line-box.unread p {
+  font-weight: bolder;
+}
+
+/*# sourceMappingURL=styles.css.map */
