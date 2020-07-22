@@ -65,14 +65,14 @@ function load_email(email_id, origin_mailbox) {
 
                     //first the subject section
                     const div_col_subject = document.createElement('div');
-                    div_col_subject.classList.add("col-7");
+                    div_col_subject.classList.add("col-8");
                     div_col_subject.id = "email-subject-subsection";
                     div_col_subject.innerHTML  = `<p>${email[email_element]}</p>`;
                     div_row.append(div_col_subject);
 
                     // Now a section for the two buttons
                     const div_col_reply_archive = document.createElement('div');
-                    div_col_reply_archive.classList.add("col-5");
+                    div_col_reply_archive.classList.add("col-4");
                     div_col_reply_archive.id="archive-reply-button";
                     const data_for_potential_buttons_to_add = [
                         ["Reply", () => reply_email(email)], // a reply button

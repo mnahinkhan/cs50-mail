@@ -5,9 +5,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mail/static/mail/inbox.js" beforeDir="false" afterPath="$PROJECT_DIR$/mail/static/mail/inbox.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mail/static/mail/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/mail/static/mail/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mail/static/mail/styles.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/mail/static/mail/styles.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mail/static/mail/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/mail/static/mail/styles.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +84,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1595164242588</updated>
-      <workItem from="1595164245401" duration="26853000" />
+      <workItem from="1595164245401" duration="27119000" />
     </task>
     <task id="LOCAL-00001" summary="Completed send mail and load mail features">
       <created>1595262443065</created>
@@ -103,7 +100,14 @@
       <option name="project" value="LOCAL" />
       <updated>1595422185709</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="implemented reply and archive">
+      <created>1595429639810</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1595429639810</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -113,17 +117,18 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Completed send mail and load mail features" />
     <MESSAGE value="Added a button to go back to the parent mailbox from email view" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added a button to go back to the parent mailbox from email view" />
+    <MESSAGE value="implemented reply and archive" />
+    <option name="LAST_COMMIT_MESSAGE" value="implemented reply and archive" />
   </component>
   <component name="WindowStateProjectService">
     <state x="440" y="190" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1595164453543">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="440" y="190" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1595164453543" />
-    <state x="289" y="127" key="CommitChangelistDialog2" timestamp="1595422185587">
+    <state x="289" y="127" key="CommitChangelistDialog2" timestamp="1595429639685">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="289" y="127" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1595422185587" />
+    <state x="289" y="127" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1595429639685" />
     <state x="412" y="310" key="EditFileWatcherDialog" timestamp="1595164730319">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -132,10 +137,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="341" y="164" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1595164724916" />
-    <state x="440" y="265" key="Vcs.Push.Dialog.v2" timestamp="1595422187936">
+    <state x="440" y="265" key="Vcs.Push.Dialog.v2" timestamp="1595429642185">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="440" y="265" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1595422187936" />
+    <state x="440" y="265" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1595429642185" />
     <state x="498" y="282" width="683" height="486" key="find.popup" timestamp="1595420952708">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
