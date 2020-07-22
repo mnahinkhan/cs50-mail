@@ -88,7 +88,23 @@ h1, h2, h3, h4, h5, h6, p, label {
   padding: 0 0 0 30px;
   margin: 0;
 }
-#single-email-content .email-subject-section p {
+#single-email-content .email-subject-section #archive-reply-button {
+  padding-top: 30px;
+}
+#single-email-content .email-subject-section #archive-reply-button button {
+  padding: 5px 30px 5px 30px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  background-color: #1f2833;
+  color: white;
+  border: 1px solid #45a29e;
+  text-align: center;
+}
+#single-email-content .email-subject-section #archive-reply-button button:hover {
+  background-color: #45a29e;
+}
+#single-email-content #email-subject-subsection p {
   font-size: 60px;
 }
 #single-email-content .email-timestamp-section p {
@@ -113,6 +129,7 @@ h1, h2, h3, h4, h5, h6, p, label {
   background-color: #27313b;
   padding-bottom: 30px;
   padding-top: 20px;
+  white-space: pre-wrap;
 }
 
 #single-email-back-section {

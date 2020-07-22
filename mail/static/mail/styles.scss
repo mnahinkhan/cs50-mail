@@ -103,7 +103,25 @@ h1, h2, h3, h4, h5, h6, p, label,  {
 
     }
   }
-  .email-subject-section  {
+  .email-subject-section {
+    #archive-reply-button {
+      padding-top: 30px;
+      button {
+        padding: 5px 30px 5px 30px;
+        margin-left: 20px;
+        margin-bottom: 10px;
+        font-size: 14px;
+        background-color: #1f2833;
+        color: white;
+        border: 1px solid #45a29e;
+        text-align: center;
+      }
+      button:hover {
+        background-color: #45a29e;
+      }
+    }
+  }
+  #email-subject-subsection  {
     p {
       font-size:60px;
     }
@@ -139,6 +157,7 @@ h1, h2, h3, h4, h5, h6, p, label,  {
     background-color: #27313b;
     padding-bottom: 30px;
     padding-top: 20px;
+    white-space: pre-wrap;
 
   }
 }

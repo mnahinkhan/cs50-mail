@@ -25,6 +25,25 @@ function compose_email() {
   document.querySelector('#compose-body').value = '';
 }
 
+function reply_email(email) {
+    compose_email();
+    document.querySelector('#compose-recipients').value = email["sender"];
+    document.querySelector('#compose-subject').value =
+        email["subject"].slice(0,4)==="Re: " ? email["subject"] : "Re: " + email["subject"] ;
+    const pre_body_text = `\n \n \n------ On ${email['timestamp']} ${email["sender"]} wrote: \n \n`;
+    document.querySelector('#compose-body').value = pre_body_text + email["body"].replace(/^/gm, "\t");
+}
+
+function archive_email(email_id, to_archive) {
+    fetch(`/emails/${email_id}`, {
+        method: 'PUT',
+        body: JSON.stringify({
+            archived: to_archive //or not, that's the question.
+        })
+    }).then( () => load_mailbox("inbox"));
+
+}
+
 function load_email(email_id, origin_mailbox) {
     document.querySelector('#emails-view').style.display = 'none';
     document.querySelector('#compose-view').style.display = 'none';
@@ -40,7 +59,46 @@ function load_email(email_id, origin_mailbox) {
             ["subject", "timestamp", "sender", "recipients", "body"].forEach(email_element => {
                 const div_row = document.createElement('div');
                 div_row.classList.add("row", `email-${email_element}-section`);
-                div_row.innerHTML = `<p>${email[email_element]}</p>`;
+                if (email_element === "subject") {
+                    // For the subject, I want to have the subject section but also two buttons on the right side
+                    // for replying and archiving
+
+                    //first the subject section
+                    const div_col_subject = document.createElement('div');
+                    div_col_subject.classList.add("col-7");
+                    div_col_subject.id = "email-subject-subsection";
+                    div_col_subject.innerHTML  = `<p>${email[email_element]}</p>`;
+                    div_row.append(div_col_subject);
+
+                    // Now a section for the two buttons
+                    const div_col_reply_archive = document.createElement('div');
+                    div_col_reply_archive.classList.add("col-5");
+                    div_col_reply_archive.id="archive-reply-button";
+                    const data_for_potential_buttons_to_add = [
+                        ["Reply", () => reply_email(email)], // a reply button
+                        [email["archived"] ? "Unarchive" : "Archive",
+                            () => archive_email(email_id, !email["archived"] )] // Archive button
+                    ];
+
+                    // if the mailbox we came from was "sent" mailbox, then we actually don't need the archive button
+                    (origin_mailbox === "sent" ?
+                        data_for_potential_buttons_to_add.slice(0,1) : data_for_potential_buttons_to_add)
+                    .forEach( text_function => {
+                        const text = text_function[0];
+                        const callback_func = text_function[1];
+                        const button = document.createElement("button");
+                        button.classList.add("float-right");
+                        button.innerHTML = text;
+                        button.addEventListener('click', callback_func);
+                        div_col_reply_archive.append(button);
+                    });
+                    div_row.append(div_col_reply_archive);
+
+                }
+                else {
+                    div_row.innerHTML = `<p>${email[email_element]}</p>`;
+                }
+
                 document.querySelector("#single-email-content").append(div_row);
             });
             const back_button_row_div = document.createElement('div');
@@ -48,7 +106,8 @@ function load_email(email_id, origin_mailbox) {
             const back_button_col_div = document.createElement('div');
             back_button_col_div.classList.add("col-2", "offset-5");
             back_button_col_div.id = "back-button";
-            back_button_col_div.innerHTML = `<p>${origin_mailbox.charAt(0).toUpperCase() + origin_mailbox.slice(1)}</p>`;
+            back_button_col_div.innerHTML =
+                `<p>${origin_mailbox.charAt(0).toUpperCase() + origin_mailbox.slice(1)}</p>`;
             back_button_col_div.addEventListener('click', () => load_mailbox(origin_mailbox));
             back_button_row_div.append(back_button_col_div);
             document.querySelector("#single-email-back-section").append(back_button_row_div);
@@ -63,7 +122,7 @@ function load_email(email_id, origin_mailbox) {
         body: JSON.stringify({
             read: true
         })
-    })
+    }).then();
 }
 
 function load_mailbox(mailbox) {

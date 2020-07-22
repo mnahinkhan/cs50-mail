@@ -8,7 +8,6 @@
       <change beforePath="$PROJECT_DIR$/mail/static/mail/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/mail/static/mail/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mail/static/mail/styles.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/mail/static/mail/styles.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mail/static/mail/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/mail/static/mail/styles.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mail/templates/mail/inbox.html" beforeDir="false" afterPath="$PROJECT_DIR$/mail/templates/mail/inbox.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +87,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1595164242588</updated>
-      <workItem from="1595164245401" duration="21049000" />
+      <workItem from="1595164245401" duration="26853000" />
     </task>
     <task id="LOCAL-00001" summary="Completed send mail and load mail features">
       <created>1595262443065</created>
@@ -97,7 +96,14 @@
       <option name="project" value="LOCAL" />
       <updated>1595262443065</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added a button to go back to the parent mailbox from email view">
+      <created>1595422185709</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1595422185709</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -106,17 +112,18 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Completed send mail and load mail features" />
-    <option name="LAST_COMMIT_MESSAGE" value="Completed send mail and load mail features" />
+    <MESSAGE value="Added a button to go back to the parent mailbox from email view" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a button to go back to the parent mailbox from email view" />
   </component>
   <component name="WindowStateProjectService">
     <state x="440" y="190" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1595164453543">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="440" y="190" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1595164453543" />
-    <state x="289" y="127" key="CommitChangelistDialog2" timestamp="1595262442786">
+    <state x="289" y="127" key="CommitChangelistDialog2" timestamp="1595422185587">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="289" y="127" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1595262442786" />
+    <state x="289" y="127" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1595422185587" />
     <state x="412" y="310" key="EditFileWatcherDialog" timestamp="1595164730319">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -125,10 +132,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="341" y="164" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1595164724916" />
-    <state x="440" y="265" key="Vcs.Push.Dialog.v2" timestamp="1595262444846">
+    <state x="440" y="265" key="Vcs.Push.Dialog.v2" timestamp="1595422187936">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="440" y="265" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1595262444846" />
+    <state x="440" y="265" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1595422187936" />
     <state x="498" y="282" width="683" height="486" key="find.popup" timestamp="1595420952708">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
