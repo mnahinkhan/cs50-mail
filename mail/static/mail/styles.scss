@@ -38,7 +38,7 @@ h1, h2, h3, h4, h5, h6, p, label,  {
   color: #66fcf1;
 }
 
-.btn-outline-primary:hover {
+.btn-outline-primary:hover, .btn-outline-primary.selected {
   background-color: #45a29e;
   border-color: #45a29e;
 }
@@ -50,6 +50,10 @@ h1, h2, h3, h4, h5, h6, p, label,  {
 }
 
 #emails-view {
+  .email-line-box:hover {
+    background-color: #45a29e;
+  }
+
   #titled-first-row {
     border-top: 1px solid #45a29e;
     background-color: #0b0c10;
@@ -60,24 +64,27 @@ h1, h2, h3, h4, h5, h6, p, label,  {
       margin-bottom: 10px;
       color: #66fcf1;
     }
+    cursor: default;
   }
 
-  div.row.email-line-box {
+  .email-line-box {
     border: 1px solid #45a29e;
     border-top: 0;
-    border-radius: 5px;
+    border-radius: 1px;
     p {
       color: #c5c6c7;
       margin-top: 14px;
       margin-bottom: 12px;
     }
+    cursor: pointer;
   }
 
-  div.row.email-line-box.read {
+
+  .read {
     background-color: #0b0c10;
   }
 
-  div.row.email-line-box.unread {
+  .unread {
     background-color: #1f2833;
     p {
       font-weight: bolder;
@@ -85,4 +92,84 @@ h1, h2, h3, h4, h5, h6, p, label,  {
   }
 
 }
+
+#single-email-content {
+  background-color: #1f2833;
+  padding-bottom: 40px;
+  .row {
+    p {
+      padding: 0 0 0 30px;
+      margin: 0;
+
+    }
+  }
+  .email-subject-section  {
+    p {
+      font-size:60px;
+    }
+  }
+
+  .email-timestamp-section {
+    p {
+      font-size: 11px;
+      margin-bottom: 10px;
+    }
+  }
+  .row.email-sender-section {
+    p:before {
+      content: "From: ";
+    }
+    p {
+      font-size: 13px;
+      margin-bottom: 4px;
+    }
+  }
+
+  .email-recipients-section {
+    p:before {
+      content: "To: ";
+    }
+    p {
+      margin-bottom: 20px;
+      font-size: 13px;
+    }
+  }
+
+  .email-body-section {
+    background-color: #27313b;
+    padding-bottom: 30px;
+    padding-top: 20px;
+
+  }
+}
+
+#single-email-back-section {
+  margin-top: 40px;
+  p:before {
+    content: "Back to ";
+  }
+  p:first-letter {
+    text-transform: capitalize;
+  }
+  .row  {
+    margin:0;
+    padding:0;
+    #back-button {
+      background-color: #1f2833;
+      cursor: pointer;
+      p {
+        margin:0;
+        padding: 10px 0;
+        text-align: center;
+      }
+    }
+    #back-button:hover {
+      background-color: #45a29e;
+      p {
+        color: white;
+      }
+    }
+  }
+}
+
 

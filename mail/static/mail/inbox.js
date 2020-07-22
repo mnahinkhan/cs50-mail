@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Use buttons to toggle between views
   document.querySelector('#inbox').addEventListener('click', () => load_mailbox('inbox'));
   document.querySelector('#sent').addEventListener('click', () => load_mailbox('sent'));
-  document.querySelector('#archived').addEventListener('click', () => load_mailbox('archive'));
+  document.querySelector('#archive').addEventListener('click', () => load_mailbox('archive'));
   document.querySelector('#compose').addEventListener('click', compose_email);
   document.querySelector('#compose-form').onsubmit = send_email;
   // By default, load the inbox
@@ -15,6 +15,9 @@ function compose_email() {
   // Show compose view and hide other views
   document.querySelector('#emails-view').style.display = 'none';
   document.querySelector('#compose-view').style.display = 'block';
+    document.querySelector('#single-email-view').style.display = 'none';
+    document.querySelectorAll("button").forEach(button => button.classList.remove("selected"));
+    document.querySelector(`#compose`).classList.add("selected");
 
   // Clear out composition fields
   document.querySelector('#compose-recipients').value = '';
@@ -22,11 +25,55 @@ function compose_email() {
   document.querySelector('#compose-body').value = '';
 }
 
+function load_email(email_id, origin_mailbox) {
+    document.querySelector('#emails-view').style.display = 'none';
+    document.querySelector('#compose-view').style.display = 'none';
+    document.querySelector('#single-email-view').style.display = 'block';
+
+    document.querySelector('#single-email-content').innerHTML= '';
+    document.querySelector('#single-email-back-section').innerHTML = '';
+
+    fetch(`/emails/${email_id}`)
+        .then(response => response.json())
+        .then(email => {
+            if ("error" in email) {console.log(email)}
+            ["subject", "timestamp", "sender", "recipients", "body"].forEach(email_element => {
+                const div_row = document.createElement('div');
+                div_row.classList.add("row", `email-${email_element}-section`);
+                div_row.innerHTML = `<p>${email[email_element]}</p>`;
+                document.querySelector("#single-email-content").append(div_row);
+            });
+            const back_button_row_div = document.createElement('div');
+            back_button_row_div.classList.add("row");
+            const back_button_col_div = document.createElement('div');
+            back_button_col_div.classList.add("col-2", "offset-5");
+            back_button_col_div.id = "back-button";
+            back_button_col_div.innerHTML = `<p>${origin_mailbox.charAt(0).toUpperCase() + origin_mailbox.slice(1)}</p>`;
+            back_button_col_div.addEventListener('click', () => load_mailbox(origin_mailbox));
+            back_button_row_div.append(back_button_col_div);
+            document.querySelector("#single-email-back-section").append(back_button_row_div);
+
+
+        })
+        .catch(error =>console.log(error));
+
+
+    fetch(`/emails/${email_id}`, {
+        method: 'PUT',
+        body: JSON.stringify({
+            read: true
+        })
+    })
+}
+
 function load_mailbox(mailbox) {
   
   // Show the mailbox and hide other views
   document.querySelector('#emails-view').style.display = 'block';
   document.querySelector('#compose-view').style.display = 'none';
+  document.querySelector('#single-email-view').style.display = 'none';
+  document.querySelectorAll("button").forEach(button => button.classList.remove("selected"));
+  document.querySelector(`#${mailbox}`).classList.add("selected");
 
   // Show the mailbox name
   document.querySelector('#emails-view').innerHTML = `<h3>${mailbox.charAt(0).toUpperCase() + mailbox.slice(1)}</h3>`;
@@ -53,6 +100,10 @@ function load_mailbox(mailbox) {
                     row_div_element.append(div_section);
 
                             });
+            if (email !== artificial_first_email) {
+                row_div_element.addEventListener('click', () => load_email(email["id"], mailbox));
+            }
+
             document.querySelector('#emails-view').append(row_div_element);
 
 
